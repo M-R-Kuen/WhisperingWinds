@@ -60,7 +60,14 @@ body {
   font-family: "Gatena";
   src: url("../../public/fonts/gatena.otf");
 }
-
+@font-face {
+  font-family: "GT";
+  src: url("../../public/fonts/GT-America-Standard-Bold-Trial.otf");
+}
+@font-face {
+  font-family: "Space";
+  src: url("../../public/fonts/SpaceGrotesk-Bold.ttf");
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -92,6 +99,13 @@ body {
 
 .gatena {
   font-family: "Gatena";
+}
+.gt {
+  font-family: "GT";
+}
+
+.space {
+  font-family: "Space";
 }
 
 .hover-mustard:hover {
