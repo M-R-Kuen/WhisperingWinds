@@ -32,7 +32,7 @@ const LandingPage: React.FC = () => {
               Empowering adventurous souls.
             </h1>
             <h3 className="sfThin text-2xl md:text-4xl  2xl:text-6xl">
-              Coming Soon.
+              Coming Soon Mate!.
             </h3>
           </div>
         </div>
