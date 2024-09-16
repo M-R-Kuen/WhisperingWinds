@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Heavy";
+  src: url("../../public/fonts/SFUIDisplay-Heavy.otf");
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Light";
+  src: url("../../public/fonts/SFUIDisplay-Light.ttf");
+}
+
+@font-face {
+  font-family: "SFUIDisplay-Thin";
+  src: url("../../public/fonts/SFUIDisplay-Thin.otf");
+}
+
+@font-face {
+  font-family: "Glatic";
+  src: url("../../public/fonts/GLATIC.ttf");
+}
+
+@font-face {
+  font-family: "Moragon";
+  src: url("../../public/fonts/MoragonBold-rv419-BF668374077c907.ttf");
+}
+
+@font-face {
+  font-family: "Grooming";
+  src: url("../../public/fonts/groming-personal-use-only.otf");
+}
+
+@font-face {
+  font-family: "Gatena";
+  src: url("../../public/fonts/gatena.otf");
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.sfHeavy {
+  font-family: "SFUIDisplay-Heavy";
+}
+
+.sfThin {
+  font-family: "SFUIDisplay-Thin";
+}
+
+.sfLight {
+  font-family: "SFUIDisplay-Light";
+}
+
+.glatic {
+  font-family: "Glatic";
+}
+
+.moragon {
+  font-family: "Moragon";
+}
+.grooming {
+  font-family: "Grooming";
+}
+
+.gatena {
+  font-family: "Gatena";
+}
+
+.hover-mustard:hover {
+  text-shadow: 2px 2px 3px rgba(72, 62, 9, 0.8);
+  color: rgba(216, 186, 10, 0.8);
+}
