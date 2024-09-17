@@ -47,11 +47,6 @@ body {
 }
 
 @font-face {
-  font-family: "Moragon";
-  src: url("../../public/fonts/MoragonBold-rv419-BF668374077c907.ttf");
-}
-
-@font-face {
   font-family: "Grooming";
   src: url("../../public/fonts/groming-personal-use-only.otf");
 }
@@ -90,9 +85,6 @@ body {
   font-family: "Glatic";
 }
 
-.moragon {
-  font-family: "Moragon";
-}
 .grooming {
   font-family: "Grooming";
 }
