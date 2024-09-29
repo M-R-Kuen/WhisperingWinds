@@ -14,7 +14,7 @@
     "clsx": "^2.1.1",
     "cors": "^2.8.5",
     "formik": "^2.4.6",
-    "framer-motion": "^11.5.4",
+    "framer-motion": "^11.9.0",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",

@@ -22,7 +22,7 @@ const ImputForm: React.FC<IDataConstructor> = ({
           FieldType === "file" ? "text-black" : "p-1 text-black rounded"
         }`}
       ></Field>
-      <span className="font-Medium text-red-600 bg-slate/70 rounded">
+      <span className="firaRegular text-white bg-slate/70 rounded">
         <ErrorMessage name={FieldName} />
       </span>
     </div>

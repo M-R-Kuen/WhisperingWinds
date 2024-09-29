@@ -77,7 +77,7 @@ const LandingView: React.FC = () => {
           blurBackground={true}
           className={`bg-black/75 transition-all duration-300 ${
             openWarranty
-              ? " w-[95%] h-[80%] md:w-1/2 md:h-[65%]"
+              ? " w-[95%] h-[80%] lg:w-1/2 lg:h-[65%]"
               : "w-1/2 h-1/2"
           }`} // Cambia el tamaño del modal si `openWarranty` es true
         >
