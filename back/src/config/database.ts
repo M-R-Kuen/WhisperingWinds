@@ -16,9 +16,9 @@
 //   );
 
 // export default sequelize;
-
+require("dotenv").config();
 const { Sequelize } = require("sequelize");
-require("dotenv").config(); // Al principio del archivo
+// Al principio del archivo
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
