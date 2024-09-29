@@ -27,41 +27,23 @@ body {
 }
 
 @font-face {
-  font-family: "SFUIDisplay-Heavy";
-  src: url("../../public/fonts/SFUIDisplay-Heavy.otf");
-}
-
-@font-face {
-  font-family: "SFUIDisplay-Light";
-  src: url("../../public/fonts/SFUIDisplay-Light.ttf");
-}
-
-@font-face {
-  font-family: "SFUIDisplay-Thin";
-  src: url("../../public/fonts/SFUIDisplay-Thin.otf");
-}
-
-@font-face {
   font-family: "Glatic";
   src: url("../../public/fonts/GLATIC.ttf");
 }
 
 @font-face {
-  font-family: "Grooming";
-  src: url("../../public/fonts/groming-personal-use-only.otf");
+  font-family: "Fira Mono Regular";
+  src: url("../../public/fonts/FiraMono-Regular.ttf");
 }
 
 @font-face {
-  font-family: "Gatena";
-  src: url("../../public/fonts/gatena.otf");
+  font-family: "Cy Grotesk Bold";
+  src: url("../../public/fonts/CyGroteskTrial-KeyBold.otf");
 }
+
 @font-face {
-  font-family: "GT";
-  src: url("../../public/fonts/GT-America-Standard-Bold-Trial.otf");
-}
-@font-face {
-  font-family: "Space";
-  src: url("../../public/fonts/SpaceGrotesk-Bold.ttf");
+  font-family: "Cy Grotesk Light";
+  src: url("../../public/fonts/CyGroteskTrial-KeyLight.otf");
 }
 @layer utilities {
   .text-balance {
@@ -69,35 +51,20 @@ body {
   }
 }
 
-.sfHeavy {
-  font-family: "SFUIDisplay-Heavy";
-}
-
-.sfThin {
-  font-family: "SFUIDisplay-Thin";
-}
-
-.sfLight {
-  font-family: "SFUIDisplay-Light";
-}
-
 .glatic {
   font-family: "Glatic";
 }
 
-.grooming {
-  font-family: "Grooming";
+.firaRegular {
+  font-family: "Fira Mono Regular";
 }
 
-.gatena {
-  font-family: "Gatena";
-}
-.gt {
-  font-family: "GT";
+.cyGroteskBold {
+  font-family: "Cy Grotesk Bold";
 }
 
-.space {
-  font-family: "Space";
+.cyGroteskLight {
+  font-family: "Cy Grotesk Light";
 }
 
 .hover-mustard:hover {
