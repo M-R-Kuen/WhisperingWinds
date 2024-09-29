@@ -1,7 +1,8 @@
 "use client";
 import ActionButton from "@/components/UI/ActionButton/ActionButton";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion"; // Importamos framer-motion
 import ReusableModal from "../../Modal/ReusableModal";
 import FormComponent from "../../ReusableFormComponent/FormComponent";
 import {
@@ -17,6 +18,16 @@ const LandingView: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [openWarranty, setOpenWarranty] = useState(false);
   const [message, setMessage] = useState("");
+  const [startAnimation, setStartAnimation] = useState(false); // Controla el inicio de la animación
+
+  // Usamos useEffect para retrasar la animación
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStartAnimation(true); // Inicia la animación después de 2 segundos
+    }, 3000);
+
+    return () => clearTimeout(timer); // Limpia el temporizador
+  }, []);
 
   const submitForm = async (data: IProductRegister) => {
     try {
@@ -41,7 +52,7 @@ const LandingView: React.FC = () => {
 
       {/* Content over the background */}
       <div className="relative z-20 flex flex-col justify-evenly w-full md:mt-[5%]">
-        <div className="flex flex-col items-center justify-center text-white p-8 overflow-hidden  ">
+        <div className="flex flex-col items-center justify-center text-white p-8 overflow-hidden">
           <div className="flex flex-col items-center md:w-3/4">
             <Image
               src="/images/Whispering Winds-Logotypewhite.png"
@@ -50,23 +61,32 @@ const LandingView: React.FC = () => {
               alt="logo"
               className="mx-auto mb-20 mt-10 md:mb-20 md:mt-0"
             />
-            <h1 className="text-5xl text-center  text-yellow-600 mt-0 mx-auto w-full cyGroteskBold tracking-tighter uppercase  lg:text-8xl hover:scale-110">
+            <h1 className="text-5xl text-center text-yellow-600 mt-0 mx-auto w-full cyGroteskBold tracking-tighter uppercase lg:text-8xl hover:scale-110">
               Empowering adventurous souls
             </h1>
             <h3 className="firaRegular text-2xl text-center md:text-4xl mt-10 uppercase">
               [Unveiling soon] Stay curious.
             </h3>
-            <ActionButton
-              className=" mt-10 firaRegular text-xl md:text-2xl hover:underline uppercase"
-              onClick={() => {
-                setModalOpen(true);
-              }}
+
+            {/* Motion animation para el botón con framer-motion */}
+            <motion.div
+              initial={{ x: 300, opacity: 0 }}
+              animate={startAnimation ? { x: 0, opacity: 1 } : {}}
+              transition={{ type: "spring", stiffness: 100, damping: 20 }}
             >
-              register your product for extended warranty
-            </ActionButton>
+              <ActionButton
+                className="mt-16 firaRegular text-xl md:text-2xl hover:underline uppercase bg-yellow-600 px-6 py-4"
+                onClick={() => {
+                  setModalOpen(true);
+                }}
+              >
+                register your product for extended warranty
+              </ActionButton>
+            </motion.div>
           </div>
         </div>
       </div>
+
       {modalOpen && (
         <ReusableModal
           isOpen={modalOpen}
@@ -76,9 +96,7 @@ const LandingView: React.FC = () => {
           }}
           blurBackground={true}
           className={`bg-black/75 transition-all duration-300 ${
-            openWarranty
-              ? " w-[95%] h-[80%] lg:w-1/2 lg:h-[65%]"
-              : "w-1/2 h-1/2"
+            openWarranty ? "w-[95%] h-[80%] lg:w-1/2 lg:h-[65%]" : "w-1/2 h-1/2"
           }`} // Cambia el tamaño del modal si `openWarranty` es true
         >
           <FormComponent
@@ -106,7 +124,7 @@ const LandingView: React.FC = () => {
           )}
         </ReusableModal>
       )}
-      {/* Div que muestra el mensaje de la respuesta */}
+
       {message && (
         <div className="fixed bottom-5 right-5 bg-gray-800 text-white p-4 firaRegular rounded-md shadow-lg">
           {message}
