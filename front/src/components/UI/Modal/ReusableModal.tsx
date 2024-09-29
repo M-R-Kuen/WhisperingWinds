@@ -31,7 +31,7 @@ const ReusableModal: React.FC<ModalProps> = ({
       onClick={onClose}
     >
       <div
-        className={`${backgroundColor} ${textColor} p-8 rounded-lg w-1/2 h-1/2 relative overflow-hidden ${className}`}
+        className={`${backgroundColor} ${textColor} p-8 rounded-lg w-[90%] h-auto  md:w-1/2 md:h-1/2 relative overflow-hidden ${className}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Imagen de fondo opcional con animación */}

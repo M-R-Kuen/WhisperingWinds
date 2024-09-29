@@ -50,10 +50,10 @@ const LandingView: React.FC = () => {
               alt="logo"
               className="mx-auto mb-20 mt-10 md:mb-20 md:mt-0"
             />
-            <h1 className="text-4xl text-center  text-yellow-600 mt-0 mx-auto w-full cyGroteskBold tracking-tighter uppercase  lg:text-8xl hover:scale-110">
+            <h1 className="text-5xl text-center  text-yellow-600 mt-0 mx-auto w-full cyGroteskBold tracking-tighter uppercase  lg:text-8xl hover:scale-110">
               Empowering adventurous souls
             </h1>
-            <h3 className="firaRegular text-2xl md:text-4xl mt-10 uppercase">
+            <h3 className="firaRegular text-2xl text-center md:text-4xl mt-10 uppercase">
               [Unveiling soon] Stay curious.
             </h3>
             <ActionButton
@@ -76,7 +76,9 @@ const LandingView: React.FC = () => {
           }}
           blurBackground={true}
           className={`bg-black/75 transition-all duration-300 ${
-            openWarranty ? "w-1/2 h-[65%]" : "w-1/2 h-1/2"
+            openWarranty
+              ? " w-[95%] h-[80%] md:w-1/2 md:h-[65%]"
+              : "w-1/2 h-1/2"
           }`} // Cambia el tamaño del modal si `openWarranty` es true
         >
           <FormComponent
