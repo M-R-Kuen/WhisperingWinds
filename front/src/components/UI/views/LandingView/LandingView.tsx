@@ -18,6 +18,7 @@ const LandingView: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [openWarranty, setOpenWarranty] = useState(false);
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false); // Estado para el loading
   const [startAnimation, setStartAnimation] = useState(false); // Controla el inicio de la animación
 
   // Usamos useEffect para retrasar la animación
@@ -30,15 +31,20 @@ const LandingView: React.FC = () => {
   }, []);
 
   const submitForm = async (data: IProductRegister) => {
+    setLoading(true);
     try {
       const response = await postProductRegister(data);
-      console.log(response);
       if (response) {
         setModalOpen(false);
         setMessage(response);
+        setTimeout(() => {
+          setMessage(""); // Elimina el mensaje de éxito después de 3 segundos
+        }, 3000);
       }
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false); // Detiene el loading
     }
   };
 
@@ -125,7 +131,11 @@ const LandingView: React.FC = () => {
           )}
         </ReusableModal>
       )}
-
+      {loading && (
+        <div className="fixed bottom-5 right-5 bg-yellow-500 text-white p-4 firaRegular rounded-md shadow-lg">
+          Submitting...
+        </div>
+      )}
       {message && (
         <div className="fixed bottom-5 right-5 bg-gray-800 text-white p-4 firaRegular rounded-md shadow-lg">
           {message}
