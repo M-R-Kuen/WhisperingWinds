@@ -49,14 +49,14 @@ const LandingView: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col w-screen h-screen ">
+    <div className="flex flex-col w-screen h-screen bg-yellow-600 ">
       {/* Background with scaling animation */}
-      <div className="bg-landing-bg bg-cover bg-center absolute inset-0 animate-scaleImage">
-        <div className="absolute inset-0 overflow-hidden w-full bg-black opacity-50"></div>
+      <div className="bg-landing-bg bg-cover bg-center absolute inset-0 md:animate-scaleImage">
+        <div className="absolute inset-0 overflow-hidden h-full w-full bg-black opacity-50"></div>
       </div>
 
       {/* Content over the background */}
-      <div className="relative z-20 flex flex-col justify-evenly w-full md:mt-[5%]">
+      <div className="relative z-20 flex flex-col h-full justify-evenly w-full md:mt-[5%]">
         <div className="flex flex-col items-center justify-center text-white p-8 overflow-hidden ">
           <div className="flex flex-col items-center md:w-3/4 ">
             <Image
