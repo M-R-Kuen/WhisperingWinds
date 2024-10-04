@@ -114,6 +114,11 @@ const LandingView: React.FC = () => {
             handlerSubmit={submitForm}
           ></FormComponent>
           <div className="mt-4">
+            {loading && (
+              <div className="fixed bottom-5 right-5 bg-yellow-500 text-white p-4 firaRegular rounded-md shadow-lg">
+                Submitting...
+              </div>
+            )}
             <ActionButton
               className="text-white underline uppercase firaRegular"
               onClick={() => setOpenWarranty((prev) => !prev)}
@@ -131,11 +136,7 @@ const LandingView: React.FC = () => {
           )}
         </ReusableModal>
       )}
-      {loading && (
-        <div className="fixed bottom-5 right-5 bg-yellow-500 text-white p-4 firaRegular rounded-md shadow-lg">
-          Submitting...
-        </div>
-      )}
+
       {message && (
         <div className="fixed bottom-5 right-5 bg-gray-800 text-white p-4 firaRegular rounded-md shadow-lg">
           {message}
