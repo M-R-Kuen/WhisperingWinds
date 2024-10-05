@@ -100,7 +100,7 @@ const LandingView: React.FC = () => {
             setOpenWarranty(false); // Cierra la sección de garantía al cerrar el modal
           }}
           blurBackground={true}
-          className={`bg-yellow-800/75 transition-all duration-300 ${
+          className={`bg-yellow-800/80 transition-all duration-300 shadow-xl shadow-zinc-400 ${
             openWarranty
               ? "w-[95%] h-[80%] lg:w-1/2 lg:h-[65%] scrollbar-hide"
               : "w-1/2 h-1/2 scrollbar-hide"
